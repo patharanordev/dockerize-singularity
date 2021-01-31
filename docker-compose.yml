@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+
+  kaldi:
+    container_name: singularity
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/app
+    # entrypoint:
+    #   - singularity build /app/kaldi.sif /app/kaldi.def
+    tty: true
+    restart: always
